@@ -2,6 +2,7 @@ import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 
 const Login = React.lazy(() => import('./views/login/Login'));
+const Register = React.lazy(() => import('./views/register/Register'));
 const Home = React.lazy(() => import('./views/home/Home'));
 
 const routes: { path: string, element: React.ReactElement }[] = [
@@ -10,6 +11,14 @@ const routes: { path: string, element: React.ReactElement }[] = [
     element: (
       <React.Suspense>
         <Login />
+      </React.Suspense>
+    )
+  },
+  {
+    path: '/register',
+    element: (
+      <React.Suspense>
+        <Register />
       </React.Suspense>
     )
   },
