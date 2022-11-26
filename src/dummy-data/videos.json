@@ -1,0 +1,92 @@
+[
+  {
+    "video_id": "1",
+    "video_title": "Video Title 1",
+    "video_path_url": "/assets/videos/dummy-nft.mp4",
+    "video_duration": "10: 15",
+    "thumbnail_path_url": "/assets/images/dummy-nft-thumbnail.png",
+    "user_name": "Name 1",
+    "posted_at": "12 days ago"
+  },
+  {
+    "video_id": "2",
+    "video_title": "Video Title 2",
+    "video_path_url": "/assets/videos/dummy-nft.mp4",
+    "video_duration": "10: 15",
+    "thumbnail_path_url": "/assets/images/dummy-nft-thumbnail.png",
+    "user_name": "Name 2",
+    "posted_at": "12 days ago"
+  },
+  {
+    "video_id": "3",
+    "video_title": "Video Title 3",
+    "video_path_url": "/assets/videos/dummy-nft.mp4",
+    "video_duration": "10: 15",
+    "thumbnail_path_url": "/assets/images/dummy-nft-thumbnail.png",
+    "user_name": "Name 3",
+    "posted_at": "12 days ago"
+  },
+  {
+    "video_id": "4",
+    "video_title": "Video Title 4",
+    "video_path_url": "/assets/videos/dummy-nft.mp4",
+    "video_duration": "10: 15",
+    "thumbnail_path_url": "/assets/images/dummy-nft-thumbnail.png",
+    "user_name": "Name 4",
+    "posted_at": "12 days ago"
+  },
+  {
+    "video_id": "5",
+    "video_title": "Video Title 5",
+    "video_path_url": "/assets/videos/dummy-nft.mp4",
+    "video_duration": "10: 15",
+    "thumbnail_path_url": "/assets/images/dummy-nft-thumbnail.png",
+    "user_name": "Name 5",
+    "posted_at": "12 days ago"
+  },
+  {
+    "video_id": "6",
+    "video_title": "Video Title 6",
+    "video_path_url": "/assets/videos/dummy-nft.mp4",
+    "video_duration": "10: 15",
+    "thumbnail_path_url": "/assets/images/dummy-nft-thumbnail.png",
+    "user_name": "Name 6",
+    "posted_at": "12 days ago"
+  },
+  {
+    "video_id": "7",
+    "video_title": "Video Title 7",
+    "video_path_url": "/assets/videos/dummy-nft.mp4",
+    "video_duration": "10: 15",
+    "thumbnail_path_url": "/assets/images/dummy-nft-thumbnail.png",
+    "user_name": "Name 7",
+    "posted_at": "12 days ago"
+  },
+  {
+    "video_id": "8",
+    "video_title": "Video Title 8",
+    "video_path_url": "/assets/videos/dummy-nft.mp4",
+    "video_duration": "10: 15",
+    "thumbnail_path_url": "/assets/images/dummy-nft-thumbnail.png",
+    "user_name": "Name 8",
+    "posted_at": "12 days ago"
+  },
+  {
+    "video_id": "9",
+    "video_title": "Video Title 9",
+    "video_path_url": "/assets/videos/dummy-nft.mp4",
+    "video_duration": "10: 15",
+    "thumbnail_path_url": "/assets/images/dummy-nft-thumbnail.png",
+    "user_name": "Name 9",
+    "posted_at": "12 days ago"
+  },
+  {
+    "video_id": "9",
+    "video_title": "Video Title 10",
+    "video_path_url": "/assets/videos/dummy-nft.mp4",
+    "video_duration": "10: 15",
+    "thumbnail_path_url": "/assets/images/dummy-nft-thumbnail.png",
+    "user_name": "Name 10",
+    "posted_at": "12 days ago"
+  }
+]

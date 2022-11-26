@@ -9,10 +9,13 @@ export const HeaderContainer = styled.div`
 `;
 
 export const HeaderSideMenuIconButton = styled.button`
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background-color: #3D5994;
   border: none;
   border-radius: 50%;
-  padding: 12px 14px;
+  padding: 12px;
   &:focus {
     outline: none;
   }
