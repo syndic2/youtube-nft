@@ -1,17 +1,19 @@
 import React from 'react';
 
-import { IconButtonWrapper, IconImg } from './IconButton.styles';
+import Icon from '../icon/Icon';
+import { IconButtonWrapper } from './IconButton.styles';
 
 interface IconButtonProps {
-  src?: string;
+  src: string;
+  onClick?: () => void;
 }
 
 export const IconButton: React.FC<IconButtonProps> = (props: IconButtonProps) => {
-  const { src } = props;
+  const { src, onClick } = props;
 
   return (
-    <IconButtonWrapper>
-      <IconImg src={src} />
+    <IconButtonWrapper onClick={onClick}>
+      <Icon src={src} />
     </IconButtonWrapper>
   );
 };

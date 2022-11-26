@@ -1,17 +1,29 @@
 import React, { useState, useRef, useCallback, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 
+import Icon from '../../utils/components/icon/Icon';
 import {
   VideoItemContainer,
   VideoItemVideoContainer,
   VideoItemVideo,
-  VideoItemThumbnail
+  VideoItemThumbnail,
+  VideoItemDurationContainer,
+  VideoItemDurationLabel,
+  VideoItemVideoInfoContainer,
+  VideoItemVideoTitleLabel,
+  VideoItemVideoPostedAtLabel,
+  VideoItemVideoUserContainer,
+  VideoItemVideoUserIconContainer,
+  VideoItemVideoUserNameLabel
 } from './VideoItem.styles';
 
 interface VideoItemProps {
+  videoId: string;
   videoTitle: string;
-  videoUrl: string;
+  videoPathUrl: string;
   videoDuration: string;
-  thumbnailUrl?: string;
+  videoType: string;
+  thumbnailPathUrl?: string;
   userName: string;
   postedAt: string;
 }
@@ -20,51 +32,82 @@ const VideoItem: React.FC<VideoItemProps> = (props: VideoItemProps) => {
   const [isShowThumbnail, setIsShowThumbnail] = useState<boolean>(false);
 
   const {
+    videoId,
     videoTitle,
-    videoUrl,
+    videoPathUrl,
     videoDuration,
-    thumbnailUrl,
+    videoType,
+    thumbnailPathUrl,
     userName,
     postedAt
   } = props;
 
   useEffect(() => {
-    setIsShowThumbnail(thumbnailUrl ? true : false);
-  }, [thumbnailUrl]);
+    setIsShowThumbnail(thumbnailPathUrl ? true : false);
+  }, [thumbnailPathUrl]);
 
   const videoElement = useRef<HTMLVideoElement>(null);
 
   const onVideoContainerMouseEnter = useCallback(() => {
     if (isShowThumbnail) setIsShowThumbnail(false);
     videoElement.current && videoElement.current.play();
-  }, [isShowThumbnail, setIsShowThumbnail]);
+  }, [isShowThumbnail]);
 
   const onVideoContainerMouseLeave = useCallback(() => {
+    setIsShowThumbnail(true);
     videoElement.current && videoElement.current.pause();
   }, []);
 
   return (
-    <VideoItemContainer>
-      <VideoItemVideoContainer
-        onMouseEnter={onVideoContainerMouseEnter}
-        onMouseLeave={onVideoContainerMouseLeave}
-      >
-        {isShowThumbnail ? (
-          <VideoItemThumbnail src={thumbnailUrl} />
-        ) : (
-          <VideoItemVideo
-            ref={videoElement}
-            muted
-            loop
-          >
-            <source
-              src={videoUrl}
-              type={'video/mp4'}
-            />
-          </VideoItemVideo>
-        )}
-      </VideoItemVideoContainer>
-    </VideoItemContainer>
+    <Link to={`/watch/${videoId}`}>
+      <VideoItemContainer videoType={videoType}>
+        {/* Video */}
+        <VideoItemVideoContainer
+          onMouseEnter={onVideoContainerMouseEnter}
+          onMouseLeave={onVideoContainerMouseLeave}
+        >
+          {isShowThumbnail ? (
+            <VideoItemThumbnail src={thumbnailPathUrl} />
+          ) : (
+            <VideoItemVideo
+              ref={videoElement}
+              muted
+              loop
+            >
+              <source
+                src={videoPathUrl}
+                type={'video/mp4'}
+              />
+            </VideoItemVideo>
+          )}
+          <VideoItemDurationContainer>
+            {isShowThumbnail ? (
+              <VideoItemDurationLabel>{videoDuration}</VideoItemDurationLabel>
+            ) : null}
+          </VideoItemDurationContainer>
+        </VideoItemVideoContainer>
+
+        {/* Video Info */}
+        <VideoItemVideoInfoContainer>
+          <VideoItemVideoTitleLabel>{videoTitle}</VideoItemVideoTitleLabel>
+          {videoType === 'VIDEO' ? (
+            <>
+              <VideoItemVideoPostedAtLabel>{postedAt}</VideoItemVideoPostedAtLabel>
+              <VideoItemVideoUserContainer>
+                <VideoItemVideoUserIconContainer>
+                  <Icon
+                    src={'/assets/icons/user-icon.svg'}
+                    width={14}
+                    height={14}
+                  />
+                </VideoItemVideoUserIconContainer>
+                <VideoItemVideoUserNameLabel>{userName}</VideoItemVideoUserNameLabel>
+              </VideoItemVideoUserContainer>
+            </>
+          ) : null}
+        </VideoItemVideoInfoContainer>
+      </VideoItemContainer>
+    </Link>
   );
 };
 

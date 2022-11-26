@@ -1,6 +1,9 @@
 import styled from 'styled-components';
 
 export const IconButtonWrapper = styled.button`
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background: transparent;
   border: none;
   padding: 0;
@@ -10,9 +13,4 @@ export const IconButtonWrapper = styled.button`
   &:hover {
     cursor: pointer;
   }
-`;
-
-export const IconImg = styled.img`
-  width: 24px;
-  height: 24px;
 `;

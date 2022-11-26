@@ -1,11 +1,18 @@
 import styled from 'styled-components';
 
-export const VideoItemContainer = styled.div`
+interface VideItemContainerProps {
+  videoType: string;
+}
+
+export const VideoItemContainer = styled.div<VideItemContainerProps>`
   display: flex;
   flex-direction: column;
-  row-gap: 10px;
+  row-gap: 2px;
   width: 100%;
-  height: 100%;
+  height: ${props => props.videoType === 'VIDEO' ? '100%' : '250px'};
+  &:hover {
+    cursor: pointer;
+  }
 `;
 
 export const VideoItemVideoContainer = styled.div`
@@ -16,9 +23,58 @@ export const VideoItemVideoContainer = styled.div`
 
 export const VideoItemVideo = styled.video`
   border-radius: 17px;
+  width: 100%;
+  height: 100%;
 `;
 
 export const VideoItemThumbnail = styled.img`
-  object-fit: contain;
+  object-fit: cover;
   border-radius: 17px;
+  width: 100%;
+  height: 100%;
 `;
+
+export const VideoItemDurationContainer = styled.div`
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+`;
+
+export const VideoItemDurationLabel = styled.label`
+  font-size: 14px;
+  color: white;
+`;
+
+export const VideoItemVideoInfoContainer = styled.div`
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  justify-items: stretch;
+  align-items: center;
+  gap: 5px;
+`;
+
+export const VideoItemVideoTitleLabel = styled.label`
+  font-size: 14px;
+  color: white;
+`;
+
+export const VideoItemVideoPostedAtLabel = styled(VideoItemVideoTitleLabel)`
+  justify-self: right;
+`;
+
+export const VideoItemVideoUserContainer = styled.div`
+  display: flex;
+  align-items: center;
+  column-gap: 5px;
+`;
+
+export const VideoItemVideoUserIconContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #2D2D2D;
+  border-radius: 50%;
+  padding: 8px;
+`;
+
+export const VideoItemVideoUserNameLabel = styled(VideoItemVideoTitleLabel)``;
