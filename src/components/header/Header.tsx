@@ -7,7 +7,7 @@ import {
   HeaderSideMenuIconButton,
   HeaderSideMenuIcon,
   HeaderContentContainer,
-  HeaderContentTitleContainer,
+  HeaderContentTitleLinkContainer,
   HeaderContentTitleLogo,
   HeaderContentTitleLabel,
   HeaderContentMenuContainer,
@@ -36,12 +36,12 @@ const Header: React.FC = () => {
       {/* Header Content */}
       <HeaderContentContainer>
         {/* Title */}
-        <HeaderContentTitleContainer>
+        <HeaderContentTitleLinkContainer href={'/nft-mode'}>
           <HeaderContentTitleLogo src={'/assets/images/logo.png'} />
-          <HeaderContentTitleLabel href={'/nft-mode'}>
+          <HeaderContentTitleLabel>
             taesun nft
           </HeaderContentTitleLabel>
-        </HeaderContentTitleContainer>
+        </HeaderContentTitleLinkContainer>
 
         {/* Menu */}
         <HeaderContentMenuContainer>
