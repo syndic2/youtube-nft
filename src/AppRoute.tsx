@@ -23,6 +23,14 @@ const routes: IAppRoutes[] = [
     element: <MainLayout />,
     children: [
       {
+        path: '/',
+        element: (
+          <React.Suspense>
+            <NftMode />
+          </React.Suspense>
+        )
+      },
+      {
         path: '/nft-mode',
         element: (
           <React.Suspense>

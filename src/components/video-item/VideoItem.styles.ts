@@ -1,10 +1,11 @@
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
 interface VideItemContainerProps {
   videoType: string;
 }
 
-export const VideoItemLink = styled.a`
+export const VideoItemLink = styled(Link)`
   text-decoration: none;
 `;
 

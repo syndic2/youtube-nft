@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import styled from "styled-components";
 
 export const HeaderContainer = styled.div`
@@ -36,7 +37,7 @@ export const HeaderContentContainer = styled.div`
   width: 100%;
 `;
 
-export const HeaderContentTitleLinkContainer = styled.a`
+export const HeaderContentTitleLinkContainer = styled(Link)`
   display: flex;
   align-items: center;
   column-gap: 20px;
@@ -96,22 +97,16 @@ export const HeaderContentLoginRegisterContainer = styled.div`
   column-gap: 10px;
 `;
 
-export const HeaderContentLoginLoginLink = styled.a`
+export const HeaderContentLoginLoginLink = styled(Link)`
   font-size: 14px;
   text-decoration: none;
   color: #FBEBEB;
 `;
 
-export const HeaderContentRegisterButton = styled.button`
-  background-color: #41597E;
+export const HeaderContentRegisterLink = styled(Link)`
+  text-decoration: none;
   color: white;
-  border: none;
+  background-color: #41597E;
   border-radius: 7px;
   padding: 12px 14px;
-  &:focus {
-    outline: none;
-  }
-  &:hover {
-    cursor: pointer;
-  }
 `;

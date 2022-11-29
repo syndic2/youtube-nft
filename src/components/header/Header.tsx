@@ -1,5 +1,4 @@
-import React, { useCallback } from "react";
-import { useNavigate } from 'react-router-dom';
+import React from "react";
 
 import IconButton from '../../utils/components/icon-button/IconButton';
 import {
@@ -16,16 +15,10 @@ import {
   HeaderContentMenuUploadVideoContainer,
   HeaderContentLoginRegisterContainer,
   HeaderContentLoginLoginLink,
-  HeaderContentRegisterButton
+  HeaderContentRegisterLink
 } from "./Header.styles";
 
 const Header: React.FC = () => {
-  const navigate = useNavigate();
-
-  const onRegisterClick = useCallback(() => {
-    navigate('/auth/register');
-  }, []);
-
   return (
     <HeaderContainer>
       {/* Side Menu Button */}
@@ -36,7 +29,7 @@ const Header: React.FC = () => {
       {/* Header Content */}
       <HeaderContentContainer>
         {/* Title */}
-        <HeaderContentTitleLinkContainer href={'/nft-mode'}>
+        <HeaderContentTitleLinkContainer to={'/nft-mode'}>
           <HeaderContentTitleLogo src={'/assets/images/logo.png'} />
           <HeaderContentTitleLabel>
             taesun nft
@@ -63,12 +56,12 @@ const Header: React.FC = () => {
 
         {/* Login & Register */}
         <HeaderContentLoginRegisterContainer>
-          <HeaderContentLoginLoginLink href={'/auth/login'}>
+          <HeaderContentLoginLoginLink to={'/auth/login'}>
             Login
           </HeaderContentLoginLoginLink>
-          <HeaderContentRegisterButton onClick={onRegisterClick}>
+          <HeaderContentRegisterLink to={'/auth/register'}>
             Register
-          </HeaderContentRegisterButton>
+          </HeaderContentRegisterLink>
         </HeaderContentLoginRegisterContainer>
       </HeaderContentContainer>
     </HeaderContainer>
