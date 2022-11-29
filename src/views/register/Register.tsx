@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useCallback } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 import {
   AuthFormContainer,
@@ -13,6 +14,12 @@ import {
 } from '../../utils/styles/AuthForm.styles';
 
 const Register: React.FC = () => {
+  const navigate = useNavigate();
+
+  const onRegisterClick = useCallback(() => {
+    navigate('/auth/login');
+  }, []);
+
   return (
     <AuthFormContainer>
       {/* Header */}
@@ -50,7 +57,7 @@ const Register: React.FC = () => {
 
       {/* Footer */}
       <AuthFormFooterContainer>
-        <AuthFormFooterButton>
+        <AuthFormFooterButton onClick={onRegisterClick}>
           Sign Up
         </AuthFormFooterButton>
         <AuthFormFooterForgotPasswordLink href={'#'}>

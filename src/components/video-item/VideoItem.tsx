@@ -58,7 +58,7 @@ const VideoItem: React.FC<VideoItemProps> = (props: VideoItemProps) => {
   }, []);
 
   return (
-    <VideoItemLink href={`/watch/${videoId}`}>
+    <VideoItemLink to={`/watch/${videoId}`}>
       <VideoItemContainer videoType={videoType}>
         {/* Video */}
         <VideoItemVideoContainer
