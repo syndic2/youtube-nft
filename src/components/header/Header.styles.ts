@@ -47,9 +47,10 @@ export const HeaderContentTitleLogo = styled.img`
   height: 50px;
 `;
 
-export const HeaderContentTitleLabel = styled.label`
+export const HeaderContentTitleLabel = styled.a`
   font-size: 32px;
   text-transform: uppercase;
+  text-decoration: none;
   color: white;
 `;
 

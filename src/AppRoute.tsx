@@ -7,6 +7,7 @@ import MainLayout from './layouts/main-layout/MainLayout';
 const Login = React.lazy(() => import('./views/login/Login'));
 const Register = React.lazy(() => import('./views/register/Register'));
 const NftMode = React.lazy(() => import('./views/nft-mode/NftMode'));
+const VideoDetail = React.lazy(() => import('./views/video-detail/VideoDetail'));
 
 interface IAppRoutes {
   path?: string;
@@ -25,6 +26,14 @@ const routes: IAppRoutes[] = [
         element: (
           <React.Suspense>
             <NftMode />
+          </React.Suspense>
+        )
+      },
+      {
+        path: '/watch/:video_id',
+        element: (
+          <React.Suspense>
+            <VideoDetail />
           </React.Suspense>
         )
       }

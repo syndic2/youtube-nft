@@ -7,8 +7,15 @@ interface DividerContainerProps {
   height?: string;
 }
 
-export const DividerContainer = styled.div<DividerContainerProps>`
-  border-top: ${props => props.thickness}px solid white;
+const DividerBaseContainer = styled.div<DividerContainerProps>`
   width: ${props => props.width};
   height: ${props => props.height};
+`;
+
+export const DividerHorizontalContainer = styled(DividerBaseContainer)`
+  border-top: ${props => props.thickness}px solid ${props => props.color};
+`;
+
+export const DividerVerticalContainer = styled(DividerBaseContainer)`
+  border-left: ${props => props.thickness}px solid ${props => props.color};
 `;
