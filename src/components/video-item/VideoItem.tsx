@@ -1,8 +1,8 @@
 import React, { useState, useRef, useCallback, useEffect } from 'react';
-import { Link } from 'react-router-dom';
 
 import Icon from '../../utils/components/icon/Icon';
 import {
+  VideoItemLink,
   VideoItemContainer,
   VideoItemVideoContainer,
   VideoItemVideo,
@@ -13,7 +13,6 @@ import {
   VideoItemVideoTitleLabel,
   VideoItemVideoPostedAtLabel,
   VideoItemVideoUserContainer,
-  VideoItemVideoUserIconContainer,
   VideoItemVideoUserNameLabel
 } from './VideoItem.styles';
 
@@ -59,7 +58,7 @@ const VideoItem: React.FC<VideoItemProps> = (props: VideoItemProps) => {
   }, []);
 
   return (
-    <Link to={`/watch/${videoId}`}>
+    <VideoItemLink href={`/watch/${videoId}`}>
       <VideoItemContainer videoType={videoType}>
         {/* Video */}
         <VideoItemVideoContainer
@@ -94,21 +93,22 @@ const VideoItem: React.FC<VideoItemProps> = (props: VideoItemProps) => {
             <>
               <VideoItemVideoPostedAtLabel>{postedAt}</VideoItemVideoPostedAtLabel>
               <VideoItemVideoUserContainer>
-                <VideoItemVideoUserIconContainer>
-                  <Icon
-                    src={'/assets/icons/user-icon.svg'}
-                    width={14}
-                    height={14}
-                  />
-                </VideoItemVideoUserIconContainer>
+                <Icon
+                  src={'/assets/icons/user-icon.svg'}
+                  backgroundColor={'#2D2D2D'}
+                  borderRadius={'50%'}
+                  width={14}
+                  height={14}
+                  padding={'10px'}
+                />
                 <VideoItemVideoUserNameLabel>{userName}</VideoItemVideoUserNameLabel>
               </VideoItemVideoUserContainer>
             </>
           ) : null}
         </VideoItemVideoInfoContainer>
       </VideoItemContainer>
-    </Link>
+    </VideoItemLink>
   );
 };
 
-export default VideoItem;
+export default React.memo(VideoItem);

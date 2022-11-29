@@ -4,6 +4,10 @@ interface VideItemContainerProps {
   videoType: string;
 }
 
+export const VideoItemLink = styled.a`
+  text-decoration: none;
+`;
+
 export const VideoItemContainer = styled.div<VideItemContainerProps>`
   display: flex;
   flex-direction: column;
@@ -66,15 +70,6 @@ export const VideoItemVideoUserContainer = styled.div`
   display: flex;
   align-items: center;
   column-gap: 5px;
-`;
-
-export const VideoItemVideoUserIconContainer = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: #2D2D2D;
-  border-radius: 50%;
-  padding: 8px;
 `;
 
 export const VideoItemVideoUserNameLabel = styled(VideoItemVideoTitleLabel)``;

@@ -38,7 +38,9 @@ const Header: React.FC = () => {
         {/* Title */}
         <HeaderContentTitleContainer>
           <HeaderContentTitleLogo src={'/assets/images/logo.png'} />
-          <HeaderContentTitleLabel>taesun nft</HeaderContentTitleLabel>
+          <HeaderContentTitleLabel href={'/nft-mode'}>
+            taesun nft
+          </HeaderContentTitleLabel>
         </HeaderContentTitleContainer>
 
         {/* Menu */}
