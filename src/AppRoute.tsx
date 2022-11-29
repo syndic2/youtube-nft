@@ -8,6 +8,7 @@ const Login = React.lazy(() => import('./views/login/Login'));
 const Register = React.lazy(() => import('./views/register/Register'));
 const NftMode = React.lazy(() => import('./views/nft-mode/NftMode'));
 const VideoDetail = React.lazy(() => import('./views/video-detail/VideoDetail'));
+const UploadVideo = React.lazy(() => import('./views/upload-video/UploadVideo'));
 
 interface IAppRoutes {
   path?: string;
@@ -36,7 +37,23 @@ const routes: IAppRoutes[] = [
             <VideoDetail />
           </React.Suspense>
         )
-      }
+      },
+      {
+        path: '/upload-video',
+        element: (
+          <React.Suspense>
+            <UploadVideo isNft={false} />
+          </React.Suspense>
+        )
+      },
+      {
+        path: '/upload-nft',
+        element: (
+          <React.Suspense>
+            <UploadVideo isNft={true} />
+          </React.Suspense>
+        )
+      },
     ]
   },
   {

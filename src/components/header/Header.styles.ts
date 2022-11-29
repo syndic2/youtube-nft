@@ -36,10 +36,11 @@ export const HeaderContentContainer = styled.div`
   width: 100%;
 `;
 
-export const HeaderContentTitleContainer = styled.div`
+export const HeaderContentTitleLinkContainer = styled.a`
   display: flex;
   align-items: center;
   column-gap: 20px;
+  text-decoration: none;
 `;
 
 export const HeaderContentTitleLogo = styled.img`
@@ -47,11 +48,14 @@ export const HeaderContentTitleLogo = styled.img`
   height: 50px;
 `;
 
-export const HeaderContentTitleLabel = styled.a`
+export const HeaderContentTitleLabel = styled.label`
   font-size: 32px;
   text-transform: uppercase;
   text-decoration: none;
   color: white;
+  &:hover {
+    cursor: pointer;
+  }
 `;
 
 export const HeaderContentMenuContainer = styled.div`
