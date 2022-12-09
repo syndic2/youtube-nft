@@ -2,6 +2,8 @@ import styled from 'styled-components';
 
 interface ButtonContainerProps {
   backgroundColor: string;
+  borderRadius: string;
+  marginLeft: string;
 }
 
 interface ButtonLabelProps {
@@ -14,7 +16,9 @@ export const ButtonContainer = styled.button<ButtonContainerProps>`
   column-gap: 10px;
   background-color: ${props => props.backgroundColor};
   border: none;
-  border-radius: 25px;
+  border-radius: ${props => props.borderRadius};
+  width: fit-content;
+  margin-left: ${props => props.marginLeft};
   padding: 10px 20px;
   &:focus {
     outline: none;
