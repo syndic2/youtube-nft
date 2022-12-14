@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useCallback } from "react";
 
 import IconButton from '../../utils/components/icon-button/IconButton';
 import {
@@ -18,11 +18,21 @@ import {
   HeaderContentRegisterLink
 } from "./Header.styles";
 
-const Header: React.FC = () => {
+interface HeaderProps {
+  setIsOpenSidebar: React.Dispatch<React.SetStateAction<boolean>>;
+}
+
+const Header: React.FC<HeaderProps> = (props: HeaderProps) => {
+  const { setIsOpenSidebar } = props;
+
+  const onSidebarClick = useCallback(() => {
+    setIsOpenSidebar(prevState => !prevState);
+  }, [setIsOpenSidebar]);
+
   return (
     <HeaderContainer>
-      {/* Side Menu Button */}
-      <HeaderSideMenuIconButton>
+      {/* Sidebar Button */}
+      <HeaderSideMenuIconButton onClick={onSidebarClick}>
         <HeaderSideMenuIcon src={'/assets/icons/hamburger-button.svg'} />
       </HeaderSideMenuIconButton>
 

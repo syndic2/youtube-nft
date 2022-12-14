@@ -4,10 +4,9 @@ export const NftModeContainer = styled.div`
   display: flex;
   flex-direction: column;
   row-gap: 30px;
-  background-image: url('/assets/images/background.png');
-  background-size: cover;
-  background-position: center center;
-  background-repeat: no-repeat;
+  box-sizing: border-box;
+  width: 100%;
+  min-width: 0;
   padding: 50px;
 `;
 
