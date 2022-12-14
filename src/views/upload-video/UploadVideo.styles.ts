@@ -1,13 +1,6 @@
 import styled from 'styled-components';
 
 export const UploadVideoContainer = styled.div`
-  background-image: url('/assets/images/background.png');
-  background-size: cover;
-  background-position: center center;
-  background-repeat: no-repeat;
-`;
-
-export const UploadVideoUploadFormContainer = styled.div`
   display: flex;
   flex-direction: column;
   row-gap: 20px;

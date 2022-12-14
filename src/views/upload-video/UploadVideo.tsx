@@ -9,7 +9,6 @@ import ChipButton from '../../utils/components/chip-button/ChipButton';
 
 import {
   UploadVideoContainer,
-  UploadVideoUploadFormContainer,
   UploadVideoUploadVideoFileContainer,
   UploadVideoVideoFileTitleLabel,
   UploadVideoVideoDescriptionContainer,
@@ -80,126 +79,124 @@ const UploadVideo: React.FC<UploadVideoProps> = (props: UploadVideoProps) => {
 
   return (
     <UploadVideoContainer>
-      <UploadVideoUploadFormContainer>
-        {/* Upload Video */}
-        <UploadVideoUploadVideoFileContainer>
-          <UploadVideoVideoFileTitleLabel>
-            {isNft ? 'NFT' : 'video'} upload
-          </UploadVideoVideoFileTitleLabel>
-          <Icon
-            src={'/assets/images/upload-icon.png'}
-            width={190}
-            height={95}
-            borderRadius={'45px'}
-            backgroundColor={'white'}
-          />
-        </UploadVideoUploadVideoFileContainer>
-
-        {/* Video Description */}
-        <UploadVideoVideoDescriptionContainer>
-          <UploadVideoVideoDescriptionTitle>Description</UploadVideoVideoDescriptionTitle>
-          <UploadVideoVideoTitleInput
-            placeholder={'Title'}
-          />
-          <UploadVideoVideoDescriptionInput
-            placeholder={'Description'}
-            rows={10}
-          />
-        </UploadVideoVideoDescriptionContainer>
-
-        {/* Upload Thumbnail */}
-        <UploadVideoVideoThumbnailContainer>
-          <UploadVideoVideoThumbnailTitleLabel>Thumbnail</UploadVideoVideoThumbnailTitleLabel>
-          <UploadVideoVideoThumbnailContentContainer>
-            {/* Video Thumbnail Preview */}
-            <UploadVideoVideoThumbnailImgContainer>
-              <UploadVideoVideoThumbnailImg
-                src={thumbnailImgPreview ? thumbnailImgPreview : '/assets/icons/plain-image-icon.svg'}
-              />
-            </UploadVideoVideoThumbnailImgContainer>
-
-            {/* Video Thumbnail Upload */}
-            <UploadVideoVideoThumbnailImgUploadContainer>
-              {/* Video Thumbnail File Name */}
-              <UploadVideoVideoThumbnailImgNameContainer>
-                <UploadVideoVideoThumbnailImgNameLabel>
-                  {thumbnailImgFile ? thumbnailImgFile.name : 'Choose your thumbnail'}
-                </UploadVideoVideoThumbnailImgNameLabel>
-                <UploadVideoVideoThumbnailImgInfoLabel>
-                  Recommended thumbnail is 16:9 with size max 1mb
-                </UploadVideoVideoThumbnailImgInfoLabel>
-              </UploadVideoVideoThumbnailImgNameContainer>
-
-              {/* Video Thumbnail Upload Button */}
-              <>
-                <Button
-                  text={'Browse'}
-                  borderRadius={'7px'}
-                  onClick={onBrowseThumbnailFileClick}
-                />
-                <input
-                  ref={thumbnailInputFileRef}
-                  type={'file'}
-                  accept={'image/png, image/jpeg'}
-                  hidden
-                  onChange={onThumbnailFileChange}
-                />
-              </>
-            </UploadVideoVideoThumbnailImgUploadContainer>
-          </UploadVideoVideoThumbnailContentContainer>
-        </UploadVideoVideoThumbnailContainer>
-
-        {/* Genres */}
-        <UploadVideoVideoGenreContainer>
-          <UploadVideoVideoGenreTitleLabel>Genre</UploadVideoVideoGenreTitleLabel>
-
-          {/* Selected Genres */}
-          <UploadVideoSelectedGenreContainer>
-            <UploadVideoSelectedGenreTitleLabel>
-              Selected Tag (5 Max)
-            </UploadVideoSelectedGenreTitleLabel>
-            <UploadVideoSelectedGenreItemContainer>
-              {selectedGenres.length === 0 ? (
-                <UploadVideoEmptySelectedGenreItemLabel>
-                  Crypto, NFT, Game, Music, Vlog, . . . .
-                </UploadVideoEmptySelectedGenreItemLabel>
-              ) : selectedGenres.map((selectedGenre, index) => (
-                <ChipButton
-                  key={index}
-                  text={selectedGenre.genre_name}
-                  onClick={() => onRemoveGenreClick(selectedGenre.genre_id)}
-                />
-              ))}
-            </UploadVideoSelectedGenreItemContainer>
-          </UploadVideoSelectedGenreContainer>
-
-          {/* Select Genres */}
-          <UploadVideoSelectGenreContainer>
-            <UploadVideoSelectGenreTitleLabel>Select Tags</UploadVideoSelectGenreTitleLabel>
-            <UploadVideoSelectGenreItemContainer>
-              {genres.map((genre, index) => (
-                <ChipButton
-                  key={index}
-                  text={genre.genre_name}
-                  onClick={() => onAddGenreClick(genre)}
-                />
-              ))}
-            </UploadVideoSelectGenreItemContainer>
-            <UploadVideoSelectGenreInfoLabel>
-              Add tags so its easier for people who enjoy your type of content to find you. If your content are suited to mature audience, you can tag it as 'mature'
-            </UploadVideoSelectGenreInfoLabel>
-          </UploadVideoSelectGenreContainer>
-        </UploadVideoVideoGenreContainer>
-
-        {/* Additional Content */}
-        <AdditionalContent />
-
-        <Button
-          text={'Upload'}
-          backgroundColor={'#537CB8'}
-          borderRadius={'10px'}
+      {/* Upload Video */}
+      <UploadVideoUploadVideoFileContainer>
+        <UploadVideoVideoFileTitleLabel>
+          {isNft ? 'NFT' : 'video'} upload
+        </UploadVideoVideoFileTitleLabel>
+        <Icon
+          src={'/assets/images/upload-icon.png'}
+          width={190}
+          height={95}
+          borderRadius={'45px'}
+          backgroundColor={'white'}
         />
-      </UploadVideoUploadFormContainer>
+      </UploadVideoUploadVideoFileContainer>
+
+      {/* Video Description */}
+      <UploadVideoVideoDescriptionContainer>
+        <UploadVideoVideoDescriptionTitle>Description</UploadVideoVideoDescriptionTitle>
+        <UploadVideoVideoTitleInput
+          placeholder={'Title'}
+        />
+        <UploadVideoVideoDescriptionInput
+          placeholder={'Description'}
+          rows={10}
+        />
+      </UploadVideoVideoDescriptionContainer>
+
+      {/* Upload Thumbnail */}
+      <UploadVideoVideoThumbnailContainer>
+        <UploadVideoVideoThumbnailTitleLabel>Thumbnail</UploadVideoVideoThumbnailTitleLabel>
+        <UploadVideoVideoThumbnailContentContainer>
+          {/* Video Thumbnail Preview */}
+          <UploadVideoVideoThumbnailImgContainer>
+            <UploadVideoVideoThumbnailImg
+              src={thumbnailImgPreview ? thumbnailImgPreview : '/assets/icons/plain-image-icon.svg'}
+            />
+          </UploadVideoVideoThumbnailImgContainer>
+
+          {/* Video Thumbnail Upload */}
+          <UploadVideoVideoThumbnailImgUploadContainer>
+            {/* Video Thumbnail File Name */}
+            <UploadVideoVideoThumbnailImgNameContainer>
+              <UploadVideoVideoThumbnailImgNameLabel>
+                {thumbnailImgFile ? thumbnailImgFile.name : 'Choose your thumbnail'}
+              </UploadVideoVideoThumbnailImgNameLabel>
+              <UploadVideoVideoThumbnailImgInfoLabel>
+                Recommended thumbnail is 16:9 with size max 1mb
+              </UploadVideoVideoThumbnailImgInfoLabel>
+            </UploadVideoVideoThumbnailImgNameContainer>
+
+            {/* Video Thumbnail Upload Button */}
+            <>
+              <Button
+                text={'Browse'}
+                borderRadius={'7px'}
+                onClick={onBrowseThumbnailFileClick}
+              />
+              <input
+                ref={thumbnailInputFileRef}
+                type={'file'}
+                accept={'image/png, image/jpeg'}
+                hidden
+                onChange={onThumbnailFileChange}
+              />
+            </>
+          </UploadVideoVideoThumbnailImgUploadContainer>
+        </UploadVideoVideoThumbnailContentContainer>
+      </UploadVideoVideoThumbnailContainer>
+
+      {/* Genres */}
+      <UploadVideoVideoGenreContainer>
+        <UploadVideoVideoGenreTitleLabel>Genre</UploadVideoVideoGenreTitleLabel>
+
+        {/* Selected Genres */}
+        <UploadVideoSelectedGenreContainer>
+          <UploadVideoSelectedGenreTitleLabel>
+            Selected Tag (5 Max)
+          </UploadVideoSelectedGenreTitleLabel>
+          <UploadVideoSelectedGenreItemContainer>
+            {selectedGenres.length === 0 ? (
+              <UploadVideoEmptySelectedGenreItemLabel>
+                Crypto, NFT, Game, Music, Vlog, . . . .
+              </UploadVideoEmptySelectedGenreItemLabel>
+            ) : selectedGenres.map((selectedGenre, index) => (
+              <ChipButton
+                key={index}
+                text={selectedGenre.genre_name}
+                onClick={() => onRemoveGenreClick(selectedGenre.genre_id)}
+              />
+            ))}
+          </UploadVideoSelectedGenreItemContainer>
+        </UploadVideoSelectedGenreContainer>
+
+        {/* Select Genres */}
+        <UploadVideoSelectGenreContainer>
+          <UploadVideoSelectGenreTitleLabel>Select Tags</UploadVideoSelectGenreTitleLabel>
+          <UploadVideoSelectGenreItemContainer>
+            {genres.map((genre, index) => (
+              <ChipButton
+                key={index}
+                text={genre.genre_name}
+                onClick={() => onAddGenreClick(genre)}
+              />
+            ))}
+          </UploadVideoSelectGenreItemContainer>
+          <UploadVideoSelectGenreInfoLabel>
+            Add tags so its easier for people who enjoy your type of content to find you. If your content are suited to mature audience, you can tag it as 'mature'
+          </UploadVideoSelectGenreInfoLabel>
+        </UploadVideoSelectGenreContainer>
+      </UploadVideoVideoGenreContainer>
+
+      {/* Additional Content */}
+      <AdditionalContent />
+
+      <Button
+        text={'Upload'}
+        backgroundColor={'#537CB8'}
+        borderRadius={'10px'}
+      />
     </UploadVideoContainer>
   );
 };

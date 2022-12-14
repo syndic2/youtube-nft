@@ -1,16 +1,27 @@
-import React from "react";
+import React, { useState } from "react";
 import { Outlet } from "react-router-dom";
 
 import Header from "../../components/header/Header";
-// import Footer from "../../components/footer/Footer";
+import Sidebar from '../../components/sidebar/Sidebar';
+import {
+  MainLayoutContainer,
+  MainLayoutContentContainer,
+  MainLayoutOutlet
+} from './MainLayout.styles';
 
 const MainLayout: React.FC = () => {
+  const [isOpenSidebar, setIsOpenSidebar] = useState<boolean>(false);
+
   return (
-    <>
-      <Header />
-      <Outlet />
-      {/* <Footer /> */}
-    </>
+    <MainLayoutContainer>
+      <Header setIsOpenSidebar={setIsOpenSidebar} />
+      <MainLayoutContentContainer>
+        <Sidebar isOpen={isOpenSidebar} />
+        <MainLayoutOutlet>
+          <Outlet />
+        </MainLayoutOutlet>
+      </MainLayoutContentContainer>
+    </MainLayoutContainer>
   );
 };
 
