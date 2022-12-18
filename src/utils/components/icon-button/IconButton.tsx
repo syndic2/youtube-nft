@@ -1,19 +1,38 @@
 import React from 'react';
 
+import { ICON_TYPES } from '../svg-icon/icons';
 import Icon from '../icon/Icon';
+import SvgIcon from '../svg-icon/SvgIcon';
 import { IconButtonWrapper } from './IconButton.styles';
 
 interface IconButtonProps {
-  src: string;
+  src?: string;
+  iconName?: ICON_TYPES;
+  fill?: string;
+  width?: string | number;
   onClick?: () => void;
 }
 
 export const IconButton: React.FC<IconButtonProps> = (props: IconButtonProps) => {
-  const { src, onClick } = props;
+  const {
+    src,
+    iconName,
+    fill,
+    width,
+    onClick
+  } = props;
 
   return (
     <IconButtonWrapper onClick={onClick}>
-      <Icon src={src} />
+      {src ? (
+        <Icon src={src} />
+      ) : (
+        <SvgIcon
+          name={iconName!}
+          fill={fill}
+          width={width}
+        />
+      )}
     </IconButtonWrapper>
   );
 };

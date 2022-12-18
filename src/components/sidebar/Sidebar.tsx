@@ -109,7 +109,7 @@ const Sidebar: React.FC<SidebarProps> = (props: SidebarProps) => {
       return { ...menuPath, isSelected: true };
     }));
     navigate(path);
-  }, []);
+  }, [navigate]);
 
   return isOpen ? (
     <SidebarContainer>

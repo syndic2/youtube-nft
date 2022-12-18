@@ -47,7 +47,7 @@ const UploadVideo: React.FC<UploadVideoProps> = (props: UploadVideoProps) => {
   const [thumbnailImgFile, setThumbnailImgFile] = useState<File | undefined>(undefined);
   const thumbnailInputFileRef = useRef<HTMLInputElement | null>(null);
 
-  const [genres, setGenres] = useState(genresJSON);
+  const [genres] = useState(genresJSON);
   const [selectedGenres, setSelectedGenres] = useState([
     genresJSON[0],
     genresJSON[1],
@@ -71,7 +71,7 @@ const UploadVideo: React.FC<UploadVideoProps> = (props: UploadVideoProps) => {
     if (selectedGenre) return;
 
     setSelectedGenres(selectedGenres => [...selectedGenres, genre]);
-  }, []);
+  }, [selectedGenres]);
 
   const onRemoveGenreClick = useCallback((genreId: string) => {
     setSelectedGenres(selectedGenres => selectedGenres.filter(genre => genre.genre_id !== genreId));

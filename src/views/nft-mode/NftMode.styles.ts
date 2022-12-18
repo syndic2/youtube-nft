@@ -6,7 +6,6 @@ export const NftModeContainer = styled.div`
   row-gap: 30px;
   box-sizing: border-box;
   width: 100%;
-  min-width: 0;
   padding: 50px;
 `;
 
