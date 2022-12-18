@@ -1,7 +1,7 @@
 import React from "react";
 
 import TrendingVideo from '../../components/trending-video/TrendingVideo';
-import ShortClip from '../../components/short-clip/ShortClip';
+import ShortClipVideo from '../../components/short-clip-video/ShortClipVideo';
 import Divider from '../../utils/components/divider/Divider';
 
 import {
@@ -15,7 +15,7 @@ const NftMode: React.FC = () => {
       <NftModeTitleLabel>mint your moment</NftModeTitleLabel>
       <TrendingVideo />
       <Divider />
-      <ShortClip />
+      <ShortClipVideo />
       <Divider />
     </NftModeContainer>
   );

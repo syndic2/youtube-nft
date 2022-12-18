@@ -7,15 +7,13 @@ interface SidebarMenuContainerProps {
 export const SidebarContainer = styled.aside`
   display: flex;
   flex-direction: column;
-  align-items: center;
-  row-gap: 25px;
+  row-gap: 10px;
 	background-color: #537CB8;
   opacity: 0.75;
   overflow-x: hidden;
   overflow-y: auto;
   width: auto;
-  height: fit-content;
-  max-height: 650px;
+  height: 100%;
 `;
 
 export const SidebarMenuContainer = styled.div<SidebarMenuContainerProps>`

@@ -18,7 +18,7 @@ const Login: React.FC = () => {
 
   const onLoginClick = useCallback(() => {
     navigate('/nft-mode');
-  }, []);
+  }, [navigate]);
 
   return (
     <AuthFormContainer>

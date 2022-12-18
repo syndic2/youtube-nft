@@ -1,5 +1,6 @@
 import React, { useState, useRef, useCallback, useEffect } from 'react';
 
+import { VideoModel } from '../../data/video/models/video.model';
 import Icon from '../../utils/components/icon/Icon';
 import {
   VideoItemLink,
@@ -17,33 +18,17 @@ import {
 } from './VideoItem.styles';
 
 interface VideoItemProps {
-  videoId: string;
-  videoTitle: string;
-  videoPathUrl: string;
-  videoDuration: string;
-  videoType: string;
-  thumbnailPathUrl?: string;
-  userName: string;
-  postedAt: string;
+  video: VideoModel;
 }
 
 const VideoItem: React.FC<VideoItemProps> = (props: VideoItemProps) => {
   const [isShowThumbnail, setIsShowThumbnail] = useState<boolean>(false);
 
-  const {
-    videoId,
-    videoTitle,
-    videoPathUrl,
-    videoDuration,
-    videoType,
-    thumbnailPathUrl,
-    userName,
-    postedAt
-  } = props;
+  const { video } = props;
 
   useEffect(() => {
-    setIsShowThumbnail(thumbnailPathUrl ? true : false);
-  }, [thumbnailPathUrl]);
+    setIsShowThumbnail(video.thumbnailPathUrl ? true : false);
+  }, [video.thumbnailPathUrl]);
 
   const videoElement = useRef<HTMLVideoElement>(null);
 
@@ -58,15 +43,15 @@ const VideoItem: React.FC<VideoItemProps> = (props: VideoItemProps) => {
   }, []);
 
   return (
-    <VideoItemLink to={`/watch/${videoId}`}>
-      <VideoItemContainer videoType={videoType}>
+    <VideoItemLink to={`/watch/${video.videoId}`}>
+      <VideoItemContainer videoType={video.videoType}>
         {/* Video */}
         <VideoItemVideoContainer
           onMouseEnter={onVideoContainerMouseEnter}
           onMouseLeave={onVideoContainerMouseLeave}
         >
           {isShowThumbnail ? (
-            <VideoItemThumbnail src={thumbnailPathUrl} />
+            <VideoItemThumbnail src={video.thumbnailPathUrl} />
           ) : (
             <VideoItemVideo
               ref={videoElement}
@@ -74,24 +59,24 @@ const VideoItem: React.FC<VideoItemProps> = (props: VideoItemProps) => {
               loop
             >
               <source
-                src={videoPathUrl}
+                src={video.videoPathUrl}
                 type={'video/mp4'}
               />
             </VideoItemVideo>
           )}
           <VideoItemDurationContainer>
             {isShowThumbnail ? (
-              <VideoItemDurationLabel>{videoDuration}</VideoItemDurationLabel>
+              <VideoItemDurationLabel>{video.videoDuration}</VideoItemDurationLabel>
             ) : null}
           </VideoItemDurationContainer>
         </VideoItemVideoContainer>
 
         {/* Video Info */}
         <VideoItemVideoInfoContainer>
-          <VideoItemVideoTitleLabel>{videoTitle}</VideoItemVideoTitleLabel>
-          {videoType === 'VIDEO' ? (
+          <VideoItemVideoTitleLabel>{video.videoTitle}</VideoItemVideoTitleLabel>
+          {video.videoType === 'VIDEO' ? (
             <>
-              <VideoItemVideoPostedAtLabel>{postedAt}</VideoItemVideoPostedAtLabel>
+              <VideoItemVideoPostedAtLabel>{video.postedAt}</VideoItemVideoPostedAtLabel>
               <VideoItemVideoUserContainer>
                 <Icon
                   src={'/assets/icons/user-icon.svg'}
@@ -101,7 +86,7 @@ const VideoItem: React.FC<VideoItemProps> = (props: VideoItemProps) => {
                   height={14}
                   padding={'10px'}
                 />
-                <VideoItemVideoUserNameLabel>{userName}</VideoItemVideoUserNameLabel>
+                <VideoItemVideoUserNameLabel>{video.userName}</VideoItemVideoUserNameLabel>
               </VideoItemVideoUserContainer>
             </>
           ) : null}

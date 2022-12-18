@@ -18,7 +18,7 @@ const Register: React.FC = () => {
 
   const onRegisterClick = useCallback(() => {
     navigate('/auth/login');
-  }, []);
+  }, [navigate]);
 
   return (
     <AuthFormContainer>

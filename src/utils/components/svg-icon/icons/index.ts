@@ -6,6 +6,13 @@ import { ReactComponent as StarIcon } from '../icons/star-icon.svg';
 import { ReactComponent as ShortClipIcon } from '../icons/shortclip-icon.svg';
 import { ReactComponent as CameraIcon } from '../icons/camera-icon.svg';
 import { ReactComponent as DiamondIcon } from '../icons/diamond-icon.svg';
+import { ReactComponent as PencilIcon } from '../icons/pencil-icon.svg';
+import { ReactComponent as ChevronUpIcon } from '../icons/chevron-up-icon.svg';
+import { ReactComponent as ChevronDownIcon } from '../icons/chevron-down-icon.svg';
+import { ReactComponent as UserShieldIcon } from '../icons/user-shield-icon.svg';
+import { ReactComponent as GlobeIcon } from '../icons/globe-icon.svg';
+import { ReactComponent as LinkIcon } from '../icons/link-icon.svg';
+import { ReactComponent as SortAmountDownIcon } from '../icons/sort-amount-down-icon.svg';
 
 export type ICON_TYPES = keyof typeof Icons;
 
@@ -17,5 +24,12 @@ export const Icons = {
   'star-icon': StarIcon,
   'shortclip-icon': ShortClipIcon,
   'camera-icon': CameraIcon,
-  'diamond-icon': DiamondIcon
+  'diamond-icon': DiamondIcon,
+  'pencil-icon': PencilIcon,
+  'chevron-up-icon': ChevronUpIcon,
+  'chevron-down-icon': ChevronDownIcon,
+  'user-shield-icon': UserShieldIcon,
+  'globe-icon': GlobeIcon,
+  'link-icon': LinkIcon,
+  'sort-amount-down-icon': SortAmountDownIcon
 };
