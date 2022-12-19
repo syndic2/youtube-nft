@@ -7,7 +7,7 @@ import Divider from '../../utils/components/divider/Divider';
 import {
   NftModeContainer,
   NftModeTitleLabel
-} from "./NftMode.styles";
+} from "./styles/NftMode.styled.component";
 
 const NftMode: React.FC = () => {
   return (

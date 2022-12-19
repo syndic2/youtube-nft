@@ -1,6 +1,7 @@
 import React, { useCallback } from "react";
 import { useNavigate } from 'react-router-dom';
 
+import Button from '../../utils/components/button/Button';
 import {
   AuthFormContainer,
   AuthFormTitleLabel,
@@ -11,13 +12,23 @@ import {
   AuthFormFooterContainer,
   AuthFormFooterButton,
   AuthFormFooterForgotPasswordLink
-} from '../../utils/styles/AuthForm.styles';
+} from '../../utils/styled-components/AuthForm.styled.component';
+
+import { LoginFooterContentContainer } from './styles/Login.styled.component';
+import {
+  LoginButtonSignUpContainerStyles,
+  LoginButtonLabelSignUpStyles
+} from './styles/Login.style';
 
 const Login: React.FC = () => {
   const navigate = useNavigate();
 
   const onLoginClick = useCallback(() => {
     navigate('/nft-mode');
+  }, [navigate]);
+
+  const onSignUpClick = useCallback(() => {
+    navigate('/auth/register');
   }, [navigate]);
 
   return (
@@ -51,9 +62,17 @@ const Login: React.FC = () => {
         <AuthFormFooterButton onClick={onLoginClick}>
           Sign In
         </AuthFormFooterButton>
-        <AuthFormFooterForgotPasswordLink href={'#'}>
-          Forgot your password?
-        </AuthFormFooterForgotPasswordLink>
+        <LoginFooterContentContainer>
+          <Button
+            text={'Sign Up'}
+            containerStyles={LoginButtonSignUpContainerStyles}
+            labelStyles={LoginButtonLabelSignUpStyles}
+            onClick={onSignUpClick}
+          />
+          <AuthFormFooterForgotPasswordLink href={'#'}>
+            Forgot your password?
+          </AuthFormFooterForgotPasswordLink>
+        </LoginFooterContentContainer>
       </AuthFormFooterContainer>
     </AuthFormContainer>
   );

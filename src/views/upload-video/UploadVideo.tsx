@@ -34,7 +34,11 @@ import {
   UploadVideoSelectGenreTitleLabel,
   UploadVideoSelectGenreItemContainer,
   UploadVideoSelectGenreInfoLabel
-} from './UploadVideo.styles';
+} from './styles/UploadVideo.styled.component';
+import {
+  UploadVideoButtonUploadVideoThumbnailStyles,
+  UploadVideoButtonUploadStyles
+} from './styles/UploadVideo.style';
 
 interface UploadVideoProps {
   isNft: boolean;
@@ -132,7 +136,7 @@ const UploadVideo: React.FC<UploadVideoProps> = (props: UploadVideoProps) => {
             <>
               <Button
                 text={'Browse'}
-                borderRadius={'7px'}
+                containerStyles={UploadVideoButtonUploadVideoThumbnailStyles}
                 onClick={onBrowseThumbnailFileClick}
               />
               <input
@@ -194,8 +198,7 @@ const UploadVideo: React.FC<UploadVideoProps> = (props: UploadVideoProps) => {
 
       <Button
         text={'Upload'}
-        backgroundColor={'#537CB8'}
-        borderRadius={'10px'}
+        containerStyles={UploadVideoButtonUploadStyles}
       />
     </UploadVideoContainer>
   );

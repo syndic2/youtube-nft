@@ -8,7 +8,11 @@ import {
   VideoCommentInputCommentContentContainer,
   VideoCommentInput,
   VideoCommentActionContainer
-} from './VideoComment.styles';
+} from './styles/VideoComment.styled.component';
+import {
+  VideoCommentButtonContainerCancelStyles,
+  VideoCommentButtonLabelCancelStyles
+} from './styles/VideoComment.style';
 
 const VideoComment: React.FC = () => {
   return (
@@ -31,8 +35,8 @@ const VideoComment: React.FC = () => {
       <VideoCommentActionContainer>
         <Button
           text={'Cancel'}
-          color={'#111111'}
-          backgroundColor={'transparent'}
+          containerStyles={VideoCommentButtonContainerCancelStyles}
+          labelStyles={VideoCommentButtonLabelCancelStyles}
         />
         <Button
           text={'Comment'}

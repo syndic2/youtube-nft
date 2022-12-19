@@ -22,7 +22,13 @@ import {
   VideoInfoActionLikeDislikeContainer,
   VideoInfoActionShareSaveContainer,
   VideoInfoActionVideoDescriptionContainer
-} from './VideoInfoAction.styles';
+} from './styles/VideoInfoAction.styled.component';
+import {
+  VideoInfoActionButtonContainerLikeStyles,
+  VideoInfoActionButtonContainerDislikeStyles,
+  VideoInfoActionButtonContainerShareStyles,
+  VideoInfoActionButtonContainerAddToPlaylistStyles
+} from './styles/VideoInfoAction.style';
 
 const VideoUserInfoAction: React.FC = () => {
   const [likeCount, setLikeCount] = useState<number>(0);
@@ -94,7 +100,6 @@ const VideoUserInfoAction: React.FC = () => {
           <VideoInfoActionLikeDislikeContainer>
             <Button
               text={String(likeCount)}
-              backgroundColor={'#FF4949'}
               startIcon={(
                 <Icon
                   src={'/assets/icons/fire-icon.svg'}
@@ -103,6 +108,7 @@ const VideoUserInfoAction: React.FC = () => {
                   padding={'none'}
                 />
               )}
+              containerStyles={VideoInfoActionButtonContainerLikeStyles}
               onClick={onLikeClick}
             />
 
@@ -115,7 +121,6 @@ const VideoUserInfoAction: React.FC = () => {
 
             <Button
               text={String(dislikeCount)}
-              backgroundColor={'#6ACDD6'}
               startIcon={(
                 <Icon
                   src={'/assets/icons/water-icon.svg'}
@@ -124,6 +129,7 @@ const VideoUserInfoAction: React.FC = () => {
                   padding={'none'}
                 />
               )}
+              containerStyles={VideoInfoActionButtonContainerDislikeStyles}
               onClick={onDislikeClick}
             />
           </VideoInfoActionLikeDislikeContainer>
@@ -132,7 +138,6 @@ const VideoUserInfoAction: React.FC = () => {
           <VideoInfoActionShareSaveContainer>
             <Button
               text={'Share'}
-              backgroundColor={'#DDDDDD'}
               startIcon={(
                 <Icon
                   src={'/assets/icons/share-icon.svg'}
@@ -141,10 +146,10 @@ const VideoUserInfoAction: React.FC = () => {
                   padding={'none'}
                 />
               )}
+              containerStyles={VideoInfoActionButtonContainerShareStyles}
             />
             <Button
               text={'Save'}
-              backgroundColor={'#DDDDDD'}
               startIcon={(
                 <Icon
                   src={'/assets/icons/add-playlist-icon.svg'}
@@ -153,6 +158,7 @@ const VideoUserInfoAction: React.FC = () => {
                   padding={'none'}
                 />
               )}
+              containerStyles={VideoInfoActionButtonContainerAddToPlaylistStyles}
             />
           </VideoInfoActionShareSaveContainer>
         </VideoInfoActionActionContainer>
