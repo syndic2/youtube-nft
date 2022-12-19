@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { AdditionalContentContainer } from './AdditionalContent.styles';
+import { AdditionalContentContainer } from './styles/AdditionalContent.styled.component';
 
 const AdditionalContent: React.FC = () => {
   return (

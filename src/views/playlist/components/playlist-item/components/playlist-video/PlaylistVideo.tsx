@@ -8,7 +8,7 @@ import {
   PlaylistVideoTitleContainer,
   PlaylistVideoTitleLabel,
   PlaylistVideoVideosContainer
-} from './PlaylistVideo.styles';
+} from './styles/PlaylistVideo.styled.component';
 
 interface PlaylistVideoProps {
   videos: VideoModel[];

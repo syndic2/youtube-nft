@@ -13,7 +13,7 @@ import {
   PlaylistItemTitleContainer,
   PlaylistItemInputTitleContainer,
   PlaylistItemInputTitle
-} from './PlaylistItem.styles';
+} from './styles/PlaylistItem.styled.component';
 
 interface PlaylistItemProps {
   videoPlaylistTitle: string;

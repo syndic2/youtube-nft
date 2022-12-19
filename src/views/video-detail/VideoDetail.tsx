@@ -8,7 +8,7 @@ import {
   VideoDetailContainer,
   VideoDetailVideoWatchContainer,
   VideoDetailVideo
-} from './VideoDetail.styles';
+} from './styles/VideoDetail.styled.component';
 
 const VideoDetail: React.FC = () => {
   return (

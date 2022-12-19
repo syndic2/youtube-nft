@@ -4,14 +4,16 @@ import { IconProps } from '../icon/Icon';
 import {
   ButtonContainer,
   ButtonLabel
+} from './Button.styled.component';
+import {
+  ButtonContainerDefaultStyles,
+  ButtomtLabelDefaultStyles
 } from './Button.styles';
 
 interface ButtonProps {
   text: string;
-  color?: string;
-  backgroundColor?: string;
-  borderRadius?: string;
-  marginLeft?: string;
+  containerStyles?: React.CSSProperties;
+  labelStyles?: React.CSSProperties;
   startIcon?: React.ReactElement<IconProps>;
   onClick?: () => void;
 }
@@ -19,23 +21,29 @@ interface ButtonProps {
 const Button: React.FC<ButtonProps> = (props: ButtonProps) => {
   const {
     text,
-    color = 'white',
-    backgroundColor = '#253E72',
-    borderRadius = '25px',
-    marginLeft = 'auto',
+    containerStyles = ButtonContainerDefaultStyles,
+    labelStyles = ButtomtLabelDefaultStyles,
     startIcon,
     onClick
-  } = props;
+  } = {
+    ...props,
+    containerStyles: {
+      ...ButtonContainerDefaultStyles,
+      ...props.containerStyles
+    },
+    labelStyles: {
+      ...ButtomtLabelDefaultStyles,
+      ...props.labelStyles
+    }
+  };
 
   return (
     <ButtonContainer
-      backgroundColor={backgroundColor}
-      borderRadius={borderRadius}
-      marginLeft={marginLeft}
+      styles={containerStyles}
       onClick={onClick}
     >
       {startIcon ? startIcon : null}
-      <ButtonLabel color={color}>{text}</ButtonLabel>
+      <ButtonLabel styles={labelStyles}>{text}</ButtonLabel>
     </ButtonContainer>
   );
 };

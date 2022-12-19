@@ -7,7 +7,7 @@ import {
   PublicationDropdownItemNameContainer,
   PublicationDropdownItemNameLabel,
   PublicationDropdownItemInfoLabel
-} from './PublicationDropdownContent.styles';
+} from './styles/PublicationDropdownContent.styled.component';
 
 interface PublicationDropdownItemProps {
   label: string;
