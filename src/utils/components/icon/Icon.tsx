@@ -1,5 +1,5 @@
 import React from 'react';
-import { IconContainer, IconImg } from './Icon.styles';
+import { IconContainer, IconImg } from './styles/Icon.styled.component';
 
 export interface IconProps {
   src: string;

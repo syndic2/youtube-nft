@@ -4,11 +4,11 @@ import { IconProps } from '../icon/Icon';
 import {
   ButtonContainer,
   ButtonLabel
-} from './Button.styled.component';
+} from './styles/Button.styled.component';
 import {
   ButtonContainerDefaultStyles,
-  ButtomtLabelDefaultStyles
-} from './Button.styles';
+  ButtontLabelDefaultStyles
+} from './styles/Button.style';
 
 interface ButtonProps {
   text: string;
@@ -22,7 +22,7 @@ const Button: React.FC<ButtonProps> = (props: ButtonProps) => {
   const {
     text,
     containerStyles = ButtonContainerDefaultStyles,
-    labelStyles = ButtomtLabelDefaultStyles,
+    labelStyles = ButtontLabelDefaultStyles,
     startIcon,
     onClick
   } = {
@@ -32,7 +32,7 @@ const Button: React.FC<ButtonProps> = (props: ButtonProps) => {
       ...props.containerStyles
     },
     labelStyles: {
-      ...ButtomtLabelDefaultStyles,
+      ...ButtontLabelDefaultStyles,
       ...props.labelStyles
     }
   };

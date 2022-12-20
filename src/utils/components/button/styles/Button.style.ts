@@ -6,7 +6,7 @@ export const ButtonContainerDefaultStyles: CSSProperties = {
   marginLeft: 'auto'
 };
 
-export const ButtomtLabelDefaultStyles: CSSProperties = {
+export const ButtontLabelDefaultStyles: CSSProperties = {
   fontSize: '16px',
   color: 'white'
 };

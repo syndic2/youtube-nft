@@ -51,7 +51,6 @@ export const HeaderContentTitleLogo = styled.img`
 
 export const HeaderContentTitleLabel = styled.label`
   font-size: 32px;
-  text-transform: uppercase;
   text-decoration: none;
   color: white;
   &:hover {
@@ -88,6 +87,31 @@ export const HeaderContentMenuUploadVideoContainer = styled.div`
   display: flex;
   align-items: center;
   column-gap: 10px;
+`;
+
+export const HeaderUploadVideoPopperItemContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  row-gap: 5px;
+`;
+
+export const HeaderUploadVideoPopperItemContentContainer = styled.div`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  white-space: nowrap;
+  column-gap: 5px;
+  &:hover {
+    cursor: pointer;
+  }
+`;
+
+export const HeaderUploadVideoPopperItemContentLabel = styled.label`
+  font-size: 12px;
+  color: #040404;
+  &:hover {
+    cursor: pointer;
+  }
 `;
 
 export const HeaderContentLoginRegisterContainer = styled.div`

@@ -1,6 +1,9 @@
 import React from 'react';
 
-import { DividerHorizontalContainer, DividerVerticalContainer } from './Divider.styles';
+import {
+  DividerHorizontalContainer,
+  DividerVerticalContainer
+} from './styles/Divider.styled.component';
 
 interface DividerProps {
   orientation?: 'horizontal' | 'vertical';
