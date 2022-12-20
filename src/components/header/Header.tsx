@@ -1,6 +1,10 @@
-import React, { useCallback } from "react";
+import React, { useState, useCallback } from "react";
+import { useNavigate } from 'react-router-dom';
 
+import Icon from '../../utils/components/icon/Icon';
+import SvgIcon from '../../utils/components/svg-icon/SvgIcon';
 import IconButton from '../../utils/components/icon-button/IconButton';
+import { Popper, PopperContent } from '../../utils/components/popper';
 import {
   HeaderContainer,
   HeaderSideMenuIconButton,
@@ -13,10 +17,13 @@ import {
   HeaderContentMenuSearchBoxContainer,
   HeaderContentMenuSearchInput,
   HeaderContentMenuUploadVideoContainer,
+  HeaderUploadVideoPopperItemContainer,
+  HeaderUploadVideoPopperItemContentContainer,
+  HeaderUploadVideoPopperItemContentLabel,
   HeaderContentLoginRegisterContainer,
   HeaderContentLoginLoginLink,
   HeaderContentRegisterLink
-} from "./Header.styles";
+} from "./styles/Header.styled";
 
 interface HeaderProps {
   setIsOpenSidebar: React.Dispatch<React.SetStateAction<boolean>>;
@@ -24,10 +31,22 @@ interface HeaderProps {
 
 const Header: React.FC<HeaderProps> = (props: HeaderProps) => {
   const { setIsOpenSidebar } = props;
+  const navigate = useNavigate();
+
+  const [isOpenPopperVideoUpload, setIsOpenPopperVideoUpload] = useState<boolean>(false);
 
   const onSidebarClick = useCallback(() => {
     setIsOpenSidebar(prevState => !prevState);
   }, [setIsOpenSidebar]);
+
+  const onMenuUploadVideoClick = useCallback(() => {
+    setIsOpenPopperVideoUpload(prevState => !prevState);
+  }, []);
+
+  const onPopperContentUploadVideoClick = useCallback((url: string) => {
+    setIsOpenPopperVideoUpload(false);
+    navigate(url);
+  }, [navigate]);
 
   return (
     <HeaderContainer>
@@ -42,7 +61,7 @@ const Header: React.FC<HeaderProps> = (props: HeaderProps) => {
         <HeaderContentTitleLinkContainer to={'/nft-mode'}>
           <HeaderContentTitleLogo src={'/assets/images/logo.png'} />
           <HeaderContentTitleLabel>
-            taesun nft
+            NFTube
           </HeaderContentTitleLabel>
         </HeaderContentTitleLinkContainer>
 
@@ -59,7 +78,48 @@ const Header: React.FC<HeaderProps> = (props: HeaderProps) => {
 
           {/*  Upload Video and Settings */}
           <HeaderContentMenuUploadVideoContainer>
-            <IconButton src={'/assets/icons/upload-page-icon.svg'} />
+            {/* Popper */}
+            <Popper>
+              <IconButton
+                src={'/assets/icons/upload-page-icon.svg'}
+                onClick={onMenuUploadVideoClick}
+              />
+              <PopperContent isOpen={isOpenPopperVideoUpload}>
+                <HeaderUploadVideoPopperItemContainer>
+                  {/* Upload Video */}
+                  <HeaderUploadVideoPopperItemContentContainer
+                    onClick={() => onPopperContentUploadVideoClick('/upload-video')}
+                  >
+                    <SvgIcon
+                      name={'video-icon'}
+                      fill={'#5303EE'}
+                      width={20}
+                    />
+                    <HeaderUploadVideoPopperItemContentLabel>
+                      Upload Video
+                    </HeaderUploadVideoPopperItemContentLabel>
+                  </HeaderUploadVideoPopperItemContentContainer>
+
+                  {/* Upload NFT */}
+                  <HeaderUploadVideoPopperItemContentContainer
+                    onClick={() => onPopperContentUploadVideoClick('/upload-nft')}
+                  >
+                    <div style={{
+                      backgroundColor: 'red',
+                      borderRadius: '4px'
+                    }}>
+                      <Icon
+                        src={'/assets/images/nft-logo.png'}
+                        width={20}
+                      />
+                    </div>
+                    <HeaderUploadVideoPopperItemContentLabel>
+                      Upload NFT
+                    </HeaderUploadVideoPopperItemContentLabel>
+                  </HeaderUploadVideoPopperItemContentContainer>
+                </HeaderUploadVideoPopperItemContainer>
+              </PopperContent>
+            </Popper>
             <IconButton src={'/assets/icons/user-setting-icon.svg'} />
           </HeaderContentMenuUploadVideoContainer>
         </HeaderContentMenuContainer>

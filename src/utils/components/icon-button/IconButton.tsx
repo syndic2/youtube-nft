@@ -3,7 +3,7 @@ import React from 'react';
 import { ICON_TYPES } from '../svg-icon/icons';
 import Icon from '../icon/Icon';
 import SvgIcon from '../svg-icon/SvgIcon';
-import { IconButtonWrapper } from './IconButton.styles';
+import { IconButtonWrapper } from './styles/IconButton.styled.component';
 
 interface IconButtonProps {
   src?: string;
@@ -25,7 +25,10 @@ export const IconButton: React.FC<IconButtonProps> = (props: IconButtonProps) =>
   return (
     <IconButtonWrapper onClick={onClick}>
       {src ? (
-        <Icon src={src} />
+        <Icon
+          src={src}
+          width={Number(width)}
+        />
       ) : (
         <SvgIcon
           name={iconName!}

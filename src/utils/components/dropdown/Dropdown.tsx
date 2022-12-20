@@ -6,7 +6,7 @@ import {
   DropdownTitleContainer,
   DropdownTitleLabel,
   DropdownContentContainer
-} from './Dropdown.styles';
+} from './styles/Dropdown.styled.component';
 
 interface DropdownProps {
   title: string;

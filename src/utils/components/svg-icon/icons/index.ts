@@ -13,6 +13,7 @@ import { ReactComponent as UserShieldIcon } from '../icons/user-shield-icon.svg'
 import { ReactComponent as GlobeIcon } from '../icons/globe-icon.svg';
 import { ReactComponent as LinkIcon } from '../icons/link-icon.svg';
 import { ReactComponent as SortAmountDownIcon } from '../icons/sort-amount-down-icon.svg';
+import { ReactComponent as VideoIcon } from '../icons/video-icon.svg';
 
 export type ICON_TYPES = keyof typeof Icons;
 
@@ -31,5 +32,6 @@ export const Icons = {
   'user-shield-icon': UserShieldIcon,
   'globe-icon': GlobeIcon,
   'link-icon': LinkIcon,
-  'sort-amount-down-icon': SortAmountDownIcon
+  'sort-amount-down-icon': SortAmountDownIcon,
+  'video-icon': VideoIcon
 };

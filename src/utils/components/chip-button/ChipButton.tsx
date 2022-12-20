@@ -3,7 +3,7 @@ import React from 'react';
 import {
   ChipButtonContainer,
   ChipButtonLabel
-} from './ChipButton.styles';
+} from './styles/ChipButton.styled.component';
 
 interface ChipButtonProps {
   text: string;
