@@ -8,7 +8,7 @@ import {
   SidebarContainer,
   SidebarMenuContainer,
   SidebarMenuLabel
-} from './Sidebar.styles';
+} from './styles/Sidebar.styles';
 
 interface SidebarProps {
   isOpen: boolean;

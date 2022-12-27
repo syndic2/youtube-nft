@@ -5,7 +5,7 @@ import {
   AuthLayoutContainer,
   AuthLayoutContentContainer,
   AuthLayoutContentWrapperImage
-} from './AuthLayout.styles';
+} from './styles/AuthLayout.styled';
 
 const AuthLayout: React.FC = () => {
   return (

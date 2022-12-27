@@ -4,7 +4,7 @@ import videoPlaylists from '../../dummy-data/video-playlists.json';
 
 import { VideoMapper } from '../../data/video/mappers/video.mapper';
 import PlaylistItem from './components/playlist-item/PlaylistItem';
-import { PlaylistContainer, PlaylistContentContainer } from './styles/Playlist.styled.component';
+import { PlaylistContainer, PlaylistContentContainer } from './styles/Playlist.styled';
 
 const Playlist: React.FC = () => {
   return (

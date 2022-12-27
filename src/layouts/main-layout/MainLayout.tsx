@@ -7,7 +7,7 @@ import {
   MainLayoutContainer,
   MainLayoutContentContainer,
   MainLayoutOutlet
-} from './MainLayout.styles';
+} from './styles/MainLayout.styled';
 
 const MainLayout: React.FC = () => {
   const [isOpenSidebar, setIsOpenSidebar] = useState<boolean>(false);

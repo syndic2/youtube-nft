@@ -3,7 +3,7 @@ import React from 'react';
 import {
   DividerHorizontalContainer,
   DividerVerticalContainer
-} from './styles/Divider.styled.component';
+} from './styles/Divider.styled';
 
 interface DividerProps {
   orientation?: 'horizontal' | 'vertical';

@@ -8,7 +8,7 @@ import {
   VideoCommentInputCommentContentContainer,
   VideoCommentInput,
   VideoCommentActionContainer
-} from './styles/VideoComment.styled.component';
+} from './styles/VideoComment.styled';
 import {
   VideoCommentButtonContainerCancelStyles,
   VideoCommentButtonLabelCancelStyles
