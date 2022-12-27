@@ -12,9 +12,9 @@ import {
   AuthFormFooterContainer,
   AuthFormFooterButton,
   AuthFormFooterForgotPasswordLink
-} from '../../utils/styled-components/AuthForm.styled.component';
+} from '../../utils/styled-components/AuthForm.styled';
 
-import { LoginFooterContentContainer } from './styles/Login.styled.component';
+import { LoginFooterContentContainer } from './styles/Login.styled';
 import {
   LoginButtonSignUpContainerStyles,
   LoginButtonLabelSignUpStyles

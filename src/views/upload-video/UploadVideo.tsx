@@ -34,7 +34,7 @@ import {
   UploadVideoSelectGenreTitleLabel,
   UploadVideoSelectGenreItemContainer,
   UploadVideoSelectGenreInfoLabel
-} from './styles/UploadVideo.styled.component';
+} from './styles/UploadVideo.styled';
 import {
   UploadVideoButtonUploadVideoThumbnailStyles,
   UploadVideoButtonUploadStyles

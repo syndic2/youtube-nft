@@ -4,7 +4,7 @@ import videos from '../../../../dummy-data/videos.json';
 
 import { VideoMapper } from '../../../../data/video/mappers/video.mapper';
 import VideoItem from '../../../../components/video-item/VideoItem';
-import { VideoRecommendationContainer } from './styles/VideoRecommendation.styled.component';
+import { VideoRecommendationContainer } from './styles/VideoRecommendation.styled';
 
 const VideoRecommendation: React.FC = () => {
   return (

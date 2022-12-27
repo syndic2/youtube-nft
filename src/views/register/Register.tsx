@@ -11,7 +11,7 @@ import {
   AuthFormFooterContainer,
   AuthFormFooterButton,
   AuthFormFooterForgotPasswordLink
-} from '../../utils/styled-components/AuthForm.styled.component';
+} from '../../utils/styled-components/AuthForm.styled';
 
 const Register: React.FC = () => {
   const navigate = useNavigate();

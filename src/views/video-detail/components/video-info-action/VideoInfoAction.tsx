@@ -22,7 +22,7 @@ import {
   VideoInfoActionLikeDislikeContainer,
   VideoInfoActionShareSaveContainer,
   VideoInfoActionVideoDescriptionContainer
-} from './styles/VideoInfoAction.styled.component';
+} from './styles/VideoInfoAction.styled';
 import {
   VideoInfoActionButtonContainerLikeStyles,
   VideoInfoActionButtonContainerDislikeStyles,

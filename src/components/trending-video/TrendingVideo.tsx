@@ -15,7 +15,7 @@ import {
   TredingVideoVideosContainer,
   TrendingVideoTitleContainer,
   TredingVideoTitleLabel
-} from './TrendingVideo.styles';
+} from './styles/TrendingVideo.styled';
 
 const TrendingVideo: React.FC = () => {
   const [swiper, setSwiper] = useState<SwiperInstance | null>(null);

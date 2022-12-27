@@ -4,7 +4,7 @@ import { IconProps } from '../icon/Icon';
 import {
   ButtonContainer,
   ButtonLabel
-} from './styles/Button.styled.component';
+} from './styles/Button.styled';
 import {
   ButtonContainerDefaultStyles,
   ButtontLabelDefaultStyles

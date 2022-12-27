@@ -3,7 +3,7 @@ import React from 'react';
 import { ICON_TYPES } from '../svg-icon/icons';
 import Icon from '../icon/Icon';
 import SvgIcon from '../svg-icon/SvgIcon';
-import { IconButtonWrapper } from './styles/IconButton.styled.component';
+import { IconButtonWrapper } from './styles/IconButton.styled';
 
 interface IconButtonProps {
   src?: string;

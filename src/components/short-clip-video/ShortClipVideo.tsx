@@ -10,7 +10,7 @@ import {
   ShortClipVideoTitleContainer,
   ShortClipVideoTitleLabel,
   ShortClipVideoVideosContainer
-} from './ShortClipVideo.styles';
+} from './styles/ShortClipVideo.styled';
 
 const ShortClipVideo: React.FC = () => {
   return (

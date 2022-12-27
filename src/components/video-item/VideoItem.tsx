@@ -15,7 +15,7 @@ import {
   VideoItemVideoPostedAtLabel,
   VideoItemVideoUserContainer,
   VideoItemVideoUserNameLabel
-} from './VideoItem.styles';
+} from './styles/VideoItem.styled';
 
 interface VideoItemProps {
   video: VideoModel;
